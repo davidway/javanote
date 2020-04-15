@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class FormServlet extends HttpServlet {
+public class DoFormServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -20,7 +20,10 @@ public class FormServlet extends HttpServlet {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        //request.getRequestDispatcher("/success.jsp").forward(request, response);
+
         System.out.println("insert into database："+userName);
+        //response.sendRedirect("/javanote/success.jsp");
     }
 
     @Override

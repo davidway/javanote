@@ -8,11 +8,52 @@
   <!-- 基本配置 -->
   <servlet>
     <servlet-name>formServlet</servlet-name>
-    <servlet-class>FormServlet</servlet-class>
+    <servlet-class>DoFormServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>formServlet</servlet-name>
-    <url-pattern>/servlet/FormServlet</url-pattern>
+    <url-pattern>/servlet/DoFormServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- 基本配置 -->
+  <servlet>
+    <servlet-name>generateTokenServlet</servlet-name>
+    <servlet-class>GenerateTokenServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>generateTokenServlet</servlet-name>
+    <url-pattern>/servlet/generateTokenServlet</url-pattern>
+  </servlet-mapping>
+
+  <!-- 基本配置 -->
+  <servlet>
+    <servlet-name>testF5Flash</servlet-name>
+    <servlet-class>TestF5Flash</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>testF5Flash</servlet-name>
+    <url-pattern>/servlet/TestF5Flash</url-pattern>
+  </servlet-mapping>
+
+  <!-- 基本配置 -->
+  <servlet>
+    <servlet-name>unieKeyTest</servlet-name>
+    <servlet-class>UnieKeyTestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>unieKeyTest</servlet-name>
+    <url-pattern>/servlet/unieKeyTest</url-pattern>
+  </servlet-mapping>
+
+  <!-- 基本配置 -->
+  <servlet>
+    <servlet-name>tokenSolveServlet</servlet-name>
+    <servlet-class>TokenSolveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>tokenSolveServlet</servlet-name>
+    <url-pattern>/servlet/tokenSolveServlet</url-pattern>
   </servlet-mapping>
 
 
