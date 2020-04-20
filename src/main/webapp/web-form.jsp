@@ -1,66 +1,110 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: weekendzhu
-  Date: 2020/4/17
-  Time: 20:23
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!doctype html>
+<html lang="zh-cn">
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>表单</title>
 </head>
 <body>
-<%--
-  >子代操作符
-  兄弟操作符+
-  ^返回上级  div>p^div
-  * 多少次
-  ()分组操作符
-  属性操作符 div#header #是id div.news 是属性
-  定制属性 a[target='' title='hello world']*3
-  {}文本操作符
-  $ 数值计算操作符（循环） li.item-$*3  -->  li.item
-    $@N*N  li.item-$@3*3 ==> $@N N=3，从3开始 *3 开始计算
-    $@-N
---%>
-<form id="userForm">
-     姓名：<input type="text" name="username" value="${username}"><br/>
-    密码：<input type="password" name="password" value="${password}"><br/>
-    <input type="submit" value="提交" onclick="printResult()" />
+<%--http://localhost:8080/javanote/test?user%5Bemail%5D=demo%40example.com&user%5Binfo%5D=+--%>
+<form id="myform" >
+<label for="email" >Email</label>
+<input type="email"   name="email"  value="demo@example.com">
+    <br/>
+    <label for="email" >密码</label>
+    <input type="password"   name="email"  value="demo@example.com">
+    <br/>
+<label for="skill" >技能</label>
+<input type="checkbox"   name="skill[]"  checked="true" value="html5">HTML5
+<input type="checkbox"   name="skill[]" checked="true" value="javascript">JAVASCRIPT
+<input type="checkbox"   name="skill[]" checked="true" value="php">PHP
+<input type="checkbox"   name="skill[]" checked="true"  value="python">python
+<input type="checkbox"   name="skill[]"checked="true"   value="python">python
+    <br/>
+
+    <label for="skill" >性别：含有是否选择校验与默认值</label>
+    男<input type="radio" name="sex" value="man" checked="true">
+    女<input type="radio" name="sex" value="woman">
+<br/>
+
+<label for="skill" >月薪</label>
+<select name="sallary" >
+    <option value="" selected>----请选择----</option>
+    <option value="5000">5000以下</option>
+    <option value="5000-10000">5000-10000</option>
+    <option value="10000-20000">10000-20000</option>
+</select>
+    <br/>
+    权限证书：<input type="file" name="userFile"/>
+<br/>
+
+
+<label for="skill" >自我评价</label>
+<textarea name="info"></textarea>
+    <br/>
+
+
 </form>
- 请选择性别：<input type="radio" name="sex" value="男">男
-<input type="radio" name="sex" value="女">女<br/>
+<button type="submit" id="subbtn" >提交</button>
 <br/>
-<label for="mail">请输入爱好</label>：<br/>音乐影视：<input type="checkbox" name="interesting" value="音乐影视"><br/>
-外出旅游：<input type="checkbox" name="interesting" value="外出旅游"><br/>
-社交活动：<input type="checkbox" name="interesting" value="社交活动"><br/>
-<br/>
-请选择省市：
-<select name="area">
-        <option selected> ---请选择省市</option>
-        <optgroup label="北京市" >
-                <option value="北京市海淀区">海淀区</option>
-            <option value="北京市朝阳区">朝阳区</option>
-            <option value="北京市东城区">东城区</option>
-            <option value="北京市西城区">西城区</option>
-        </optgroup><br/>
-</select><br/>
-<br/>
-自我描述：<textarea name="" id="" cols="30" rows="10"></textarea><br/>
-<br/>
-文件：<input type="file" name="file"><br/>
-<a href=""/>
-<img href=""/>
-<br/>
-<datalist id="browsers">
-    <option value="Internet Explorer">
-    <option value="Firefox">
-    <option value="Chrome">
-    <option value="Opera">
-    <option value="Safari">
-</datalist>
 
+结果展示：<p id="result"></p>
 
+填充赋值：
+
+<br/>
+
+<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="resources/jquery.serialize-object.js"></script>
+<script src="resources/populate.js"></script>
+<script>
+
+ $(document).on('click','#subbtn', function(event) {
+     //请求参数
+     var list = {};
+     var form_data = $('#myform').serializeArray();
+     debugger;
+     var json_data = $('#myform').serializeJSON();
+     /*
+     * 格式校验：
+     * */
+     // 左右空格去掉
+
+     //是否是空字符串，或者必填，选填
+     //是否是对应类型,范围
+    //自己的业务校验
+
+     /*trimData(form_data);
+      //
+
+      //
+      */
+     $.ajax({
+         //请求方式
+         type : "POST",
+         //请求的媒体类型
+         contentType: "application/json;charset=UTF-8",
+         //请求地址
+         url : "${pageContext.request.contextPath}/servlet/getFormDataServlet",
+         //数据，json字符串
+         data : json_data,
+         //请求成功
+         success : function(result) {
+             console.log(result);
+         },
+         //请求失败，包含具体的错误信息
+         error : function(e){
+             console.log(e.status);
+             console.log(e.responseText);
+         }
+     });
+ });
+
+</script>
 </body>
 </html>
