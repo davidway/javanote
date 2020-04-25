@@ -70,20 +70,7 @@
      var form_data = $('#myform').serializeArray();
      debugger;
      var json_data = $('#myform').serializeJSON();
-     /*
-     * 格式校验：
-     * */
-     // 左右空格去掉
 
-     //是否是空字符串，或者必填，选填
-     //是否是对应类型,范围
-    //自己的业务校验
-
-     /*trimData(form_data);
-      //
-
-      //
-      */
      $.ajax({
          //请求方式
          type : "POST",
