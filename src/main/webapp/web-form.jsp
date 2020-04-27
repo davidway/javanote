@@ -17,7 +17,7 @@
 <input type="email"   name="email"  value="demo@example.com">
     <br/>
     <label for="email" >密码</label>
-    <input type="password"   name="email"  value="demo@example.com">
+    <input type="password"   name="password"  value="demo@example.com">
     <br/>
 <label for="skill" >技能</label>
 <input type="checkbox"   name="skill[]"  checked="true" value="html5">HTML5
@@ -63,12 +63,17 @@
 <script src="resources/jquery.serialize-object.js"></script>
 <script src="resources/populate.js"></script>
 <script>
+function checkForm(){
+
+
+}
 
  $(document).on('click','#subbtn', function(event) {
      //请求参数
      var list = {};
      var form_data = $('#myform').serializeArray();
-     debugger;
+     checkForm();
+
      var json_data = $('#myform').serializeJSON();
 
      $.ajax({
