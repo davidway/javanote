@@ -106,8 +106,26 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
       <artifactId>amqp-client</artifactId>
       <version>5.0.0</version>
     </dependency>
-
-
+ <!--log4j-->
+  <!--  //slf4j包-->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.8.0-beta2</version>
+    </dependency>
+   <!-- //slf4j和log4j日志交换包-->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.8.0-beta2</version>
+    </dependency>
+   <!-- //log4j包-->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+      <type>zip</type>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

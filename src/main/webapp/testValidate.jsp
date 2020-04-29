@@ -53,10 +53,11 @@
         }
         getSelectorParser(selectorString){
             var selector = selectorString[0];
+           var element="";
             if ( selector =='#' || selector=='.'){
-            var element = selectorString.substring(1,selectorString.length)
+             element = selectorString.substring(1,selectorString.length)
             }else{
-                var element = selectorString;
+              element = selectorString;
             }
             var result ;
             switch(selector){
@@ -64,13 +65,16 @@
                     result = document.getElementById(element);
                     break;
                 case '.':
-                    result  = document.getElementsByClassName(element)
+                    result  = document.getElementsByClassName(element);
                     break;
 
                 default:
-                    result  = document.getElementsByName(element)[0]
+                    result  = document.getElementsByName(element)[0];
                     break;
 
+            }
+            if ( result==undefined){
+               result  = document.getElementsByTagName(element);
             }
             return result;
         }
