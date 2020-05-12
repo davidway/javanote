@@ -1,11 +1,11 @@
-package thread;
+package leetcode.a1114;
 
 import java.util.concurrent.CountDownLatch;
 
-public class LeetCode1114 {
+public class Soluntion {
     public static void main(String[] args) {
         int[] order = {2, 1, 3};
-        LeetCode1114 leet1114 = new LeetCode1114();
+        Soluntion leet1114 = new Soluntion();
 
         for (int num : order) {
             if (num == 1) {
@@ -24,7 +24,7 @@ public class LeetCode1114 {
 
     public Semaphore seam_two_second = new Semaphore(0);
 
-    public LeetCode1114() {
+    public Soluntion() {
 
     }
 
@@ -48,7 +48,7 @@ public class LeetCode1114 {
     // 方法2：模拟CAS自旋
     private volatile int task = 1;
 
-    public LeetCode1114() {
+    public Soluntion() {
 
     }
 
@@ -119,9 +119,9 @@ class LEET1114Print implements Runnable {
 }
 
 class LEET1114Thread1 implements Runnable {
-    private LeetCode1114 leet1114;
+    private Soluntion leet1114;
 
-    LEET1114Thread1(LeetCode1114 leet1114) {
+    LEET1114Thread1(Soluntion leet1114) {
         this.leet1114 = leet1114;
     }
 
@@ -136,9 +136,9 @@ class LEET1114Thread1 implements Runnable {
 }
 
 class LEET1114Thread2 implements Runnable {
-    private LeetCode1114 leet1114;
+    private Soluntion leet1114;
 
-    LEET1114Thread2(LeetCode1114 leet1114) {
+    LEET1114Thread2(Soluntion leet1114) {
         this.leet1114 = leet1114;
     }
 
@@ -153,9 +153,9 @@ class LEET1114Thread2 implements Runnable {
 }
 
 class LEET1114Thread3 implements Runnable {
-    private LeetCode1114 leet1114;
+    private Soluntion leet1114;
 
-    LEET1114Thread3(LeetCode1114 leet1114) {
+    LEET1114Thread3(Soluntion leet1114) {
         this.leet1114 = leet1114;
     }
 

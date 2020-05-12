@@ -1,6 +1,5 @@
-package thread;
+package leetcode.a1115;
 
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Semaphore;
 
 class FooBar {

@@ -1,4 +1,4 @@
-package thread;
+package leetcode.a1114;
 
 
 import java.util.concurrent.Semaphore;
