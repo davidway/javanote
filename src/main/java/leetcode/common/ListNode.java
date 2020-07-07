@@ -33,5 +33,6 @@ public class ListNode {
             list = list.next;
 
         }
+        System.out.println();
     }
 }
